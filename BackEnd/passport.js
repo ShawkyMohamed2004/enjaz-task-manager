@@ -1,34 +1,8 @@
 const passport = require("passport");
 require("dotenv").config();
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const LocalStrategy = require("passport-local").Strategy;
 const authModel = require("./Models/Model");
 const bcrypt = require("bcrypt");
-
-const googleCredentials = {
-  clientID: process.env.GOOGLE_CLIENT_ID || "dummy_client_id_to_prevent_crash",
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET || "dummy_client_secret_to_prevent_crash",
-  callbackURL: process.env.GOOGLE_CALLBACK_URL || "http://localhost:8080/google/callback",
-};
-
-const callback = async function (accessToken, refreshToken, profile, cb) {
-  const newUser = {
-    userName: profile.displayName,
-    email: profile.emails[0].value.toLowerCase(),
-    googleId: profile.id,
-    picUrl: profile.photos[0].value,
-  };
-  try {
-    const user = await authModel.findOne({ googleId: profile.id });
-    if (user) return cb(null, user);
-    else {
-      const savedUser = await authModel(newUser).save();
-      return cb(null, savedUser);
-    }
-  } catch (err) {
-    return cb(err);
-  }
-};
 
 const LocalStrategycallback = (email, password, done) => {
   const normalizedEmail = email.toLowerCase();
@@ -48,8 +22,6 @@ const LocalStrategycallback = (email, password, done) => {
       return done(err);
     });
 };
-
-passport.use(new GoogleStrategy(googleCredentials, callback));
 passport.use(
   new LocalStrategy({ usernameField: "email" }, LocalStrategycallback)
 );

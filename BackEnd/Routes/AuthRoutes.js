@@ -15,12 +15,6 @@ router.get("/getUser", authController.getUser);
 // Firebase Auth Sync
 router.post("/firebase-auth", authController.firebaseAuth);
 
-// Google OAuth
-router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
-router.get("/google/callback", passport.authenticate("google", {
-  failureRedirect: process.env.FRONTEND_DOMAIN,
-  successRedirect: `${process.env.FRONTEND_DOMAIN}/Home`,
-}));
 
 // Social Placeholders
 router.get("/microsoft", (req, res) => authController.socialPlaceholder(req, res, "microsoft"));
