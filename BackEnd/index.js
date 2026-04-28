@@ -16,7 +16,13 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 // Standard Middlewares
-app.use(cors({ origin: true, credentials: true, methods: ["GET", "POST", "PUT", "PATCH", "DELETE"] }));
+app.set("trust proxy", 1); // Required for secure cookies on Render/Heroku
+
+app.use(cors({ 
+  origin: process.env.CLIENT_URL || "http://localhost:3000", 
+  credentials: true, 
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"] 
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,7 +37,11 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   store: sessionStore,
-  cookie: { maxAge: 1000 * 60 * 60 * 24 },
+  cookie: { 
+    maxAge: 1000 * 60 * 60 * 24,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
+  },
 }));
 
 app.use(passport.initialize());
