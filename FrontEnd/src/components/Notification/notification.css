@@ -1,0 +1,240 @@
+/* ===== NOTIFICATION DROPDOWN ===== */
+
+.bell-wrapper {
+  position: relative;
+}
+
+.notif-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 340px;
+  max-height: 420px;
+  background: var(--prof);
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropIn 0.2s ease;
+}
+
+[data-theme="dark"] .notif-dropdown {
+  border-color: var(--grey);
+  background: var(--prof);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+[data-theme="dark"] .notif-header {
+  border-bottom-color: var(--grey);
+}
+
+.notif-header h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.notif-close {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #94A3B8;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.notif-close:hover {
+  background: #FEE2E2;
+  color: #EF4444;
+}
+
+.notif-body {
+  padding: 8px 12px;
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+.notif-body::-webkit-scrollbar { 
+  width: 6px; 
+}
+
+.notif-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notif-body::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+[data-theme="dark"] .notif-body::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.notif-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94A3B8;
+}
+
+.notif-empty-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.notif-empty p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .notif-empty {
+  color: #CBD5E1;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  transition: background 0.15s;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .notif-item {
+  border-bottom-color: var(--grey);
+}
+
+.notif-item:last-child {
+  margin-bottom: 0;
+}
+
+.notif-item:hover {
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.notif-icon-wrapper {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #10B981, #34D399);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif-icon {
+  font-size: 15px;
+}
+
+.notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.notif-meta {
+  font-size: 12px;
+  color: #64748B;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .notif-meta {
+  color: #94A3B8;
+}
+
+.notif-priority-row {
+  display: flex;
+  align-items: center;
+}
+
+.notif-priority {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.notif-priority.High { 
+  background: #FEE2E2; 
+  color: #DC2626; 
+}
+
+.notif-priority.Medium { 
+  background: #FEF3C7; 
+  color: #D97706; 
+}
+
+.notif-priority.Low { 
+  background: #DBEAFE; 
+  color: #2563EB; 
+}
+
+[data-theme="dark"] .notif-priority.High {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+}
+
+[data-theme="dark"] .notif-priority.Medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+}
+
+[data-theme="dark"] .notif-priority.Low {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60A5FA;
+}
+
+.notif-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #F1F5F9;
+  text-align: center;
+}
+
+[data-theme="dark"] .notif-footer {
+  border-top-color: var(--grey);
+}
+
+.notif-footer span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #10B981;
+}
+
+[data-theme="dark"] .notif-footer span {
+  color: #34D399;
+}

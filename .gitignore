@@ -1,0 +1,30 @@
+# Enjaz Task Manager - Unified GitIgnore
+
+# === Shared / General ===
+node_modules/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+
+# === FrontEnd Specific ===
+FrontEnd/node_modules/
+FrontEnd/build/
+FrontEnd/dist/
+FrontEnd/coverage/
+FrontEnd/.pnp/
+FrontEnd/.pnp.js
+
+# === BackEnd Specific ===
+BackEnd/node_modules/
+BackEnd/.env
+BackEnd/*.log
+BackEnd/uploads/
+
+# === Misc ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,650 @@
+{
+  "info": {
+    "name": "Enjaz - Ultimate API Collection",
+    "description": "Logical sequence for demonstrating Enjaz Task Manager Backend. Flow: Auth -> Tasks -> Todos -> Notes -> Settings -> Account Actions.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "PART 1: System & Auth (3)",
+      "item": [
+        {
+          "name": "GET - Server Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Sign Up",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userName\": \"Demo User\",\n    \"email\": \"demo@enjaz.com\",\n    \"password\": \"Enjaz@2026\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/signup",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "signup"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"demo@enjaz.com\",\n    \"password\": \"Enjaz@2026\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/login",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PART 2: Tasks CRUD (6)",
+      "item": [
+        {
+          "name": "POST - Create Task",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"task-demo-1\",\n    \"task\": {\n        \"taskName\": \"Submit Project\",\n        \"priority\": \"High\",\n        \"deadline\": \"2026-04-30\"\n    },\n    \"done\": false\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/task/postTask",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "task",
+                "postTask"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Task Created",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/task/getTask",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "task",
+                "getTask"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PATCH - Update Task Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"done\": true\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/task/updateTask/task-demo-1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "task",
+                "updateTask",
+                "task-demo-1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Task Updated",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/task/getTask",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "task",
+                "getTask"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Delete Task",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/task/deleteTask/task-demo-1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "task",
+                "deleteTask",
+                "task-demo-1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Task Deleted",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/task/getTask",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "task",
+                "getTask"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PART 3: To-Dos CRUD (6)",
+      "item": [
+        {
+          "name": "POST - Create Todo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"todoId\": \"todo-demo-1\",\n    \"title\": \"Review code\",\n    \"status\": false,\n    \"dateAdded\": \"25 Apr 2026\",\n    \"category\": \"Project\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/todo/postTodo",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "todo",
+                "postTodo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Todo Created",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/todo/getTodo",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "todo",
+                "getTodo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PATCH - Update Todo",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Review code thoroughly\",\n    \"status\": true\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/todo/updateTodo/todo-demo-1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "todo",
+                "updateTodo",
+                "todo-demo-1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Todo Updated",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/todo/getTodo",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "todo",
+                "getTodo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Delete Todo",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/todo/deleteTodo/todo-demo-1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "todo",
+                "deleteTodo",
+                "todo-demo-1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Todo Deleted",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/todo/getTodo",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "todo",
+                "getTodo"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PART 4: Notes CRUD (6)",
+      "item": [
+        {
+          "name": "POST - Create Note",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"note-demo-1\",\n    \"title\": \"Demo Notes\",\n    \"noteText\": \"This is a test note for presentation.\",\n    \"date\": \"25 Apr\",\n    \"time\": \"8:00 PM\",\n    \"pinned\": false\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/postNote",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "postNote"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Note Created",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/note/getNote",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "getNote"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PATCH - Pin Note",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pinned\": true\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/updateNote/note-demo-1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "updateNote",
+                "note-demo-1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Note Pinned",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/note/getNote",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "getNote"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Delete Note",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/note/deleteNote/note-demo-1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "deleteNote",
+                "note-demo-1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Note Deleted",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/note/getNote",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "getNote"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PART 5: Settings & Profile (4)",
+      "item": [
+        {
+          "name": "GET - View Current Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/getUser",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "getUser"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Update Profile Name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userName\": \"Demo User Updated\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/updateFullProfile",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "updateFullProfile"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Name Updated",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/getUser",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "getUser"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Update Password (Security)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"oldPassword\": \"Enjaz@2026\",\n    \"newPassword\": \"NewEnjaz@2026\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/updateFullProfile",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "updateFullProfile"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PART 6: Account Actions (Destructive) (5)",
+      "item": [
+        {
+          "name": "GET - Logout",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/logout",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Verify Logout (Should Fail)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/getUser",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "getUser"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Login (For Deletion)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"demo@enjaz.com\",\n    \"password\": \"NewEnjaz@2026\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/login",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Delete Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"password\": \"NewEnjaz@2026\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/deleteAccount",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "deleteAccount"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Verify Deletion (Login Should Fail)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"demo@enjaz.com\",\n    \"password\": \"NewEnjaz@2026\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/login",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

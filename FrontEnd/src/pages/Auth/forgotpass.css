@@ -1,0 +1,115 @@
+.forgot-con {
+  display: none;
+}
+
+.forgot-page-wrapper {
+  min-height: 100vh;
+}
+
+.glass-modal .input-group {
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.glass-modal .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #64748B;
+  font-size: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-modal .input-group input {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #E2E8F0;
+  border-radius: 30px;
+  padding: 0 45px;
+  font-size: 14px;
+  color: #1E293B;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .glass-modal .input-group input {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid #475569;
+  color: #F8FAFC;
+}
+
+.glass-modal .input-group input:focus {
+  border-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.glass-modal .input-group input::placeholder {
+  color: transparent;
+}
+
+.glass-modal .input-group label {
+  position: absolute;
+  left: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.glass-modal .input-group input:focus ~ label,
+.glass-modal .input-group input:not(:placeholder-shown) ~ label {
+  top: -8px;
+  left: 20px;
+  font-size: 11px;
+  color: #059669;
+  background: white;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .glass-modal .input-group input:focus ~ label,
+[data-theme="dark"] .glass-modal .input-group input:not(:placeholder-shown) ~ label {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.glass-modal .bt {
+  width: 100%;
+  height: 50px;
+  background-color: #10B981;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.glass-modal .bt:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 480px) {
+  .glass-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 24px 24px 0 0 !important;
+    padding: 30px 20px !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

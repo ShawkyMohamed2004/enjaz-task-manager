@@ -1,0 +1,167 @@
+.css-u0soqy-MuiPickerStaticWrapper-root {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.css-hlj6pa-MuiDialogActions-root {
+  display: none !important;
+}
+
+.css-j88s13-MuiPickersToolbar-root-MuiDatePickerToolbar-root .MuiPickersToolbar-penIconButton {
+  display: none !important;
+}
+
+.css-j88s13-MuiPickersToolbar-root-MuiDatePickerToolbar-root {
+  padding: 0 !important;
+}
+
+.css-hq2kpw-MuiGrid-root-MuiPickersToolbar-content {
+  justify-content: center !important;
+  background-color: var(--accent);
+  padding: 1rem;
+}
+
+.MuiPickersToolbar-root.MuiPickersLayout-toolbar.css-1eurbeq-MuiPickersToolbar-root-MuiDatePickerToolbar-root {
+  background-color: var(--accent);
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+h4.MuiTypography-root.MuiTypography-h4.MuiTypography-alignCenter.MuiDatePickerToolbar-title.css-3jvy96-MuiTypography-root-MuiDatePickerToolbar-title {
+  font-size: 16px;
+}
+
+.css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-actionBar {
+  display: none;
+}
+
+.MuiPickersLayout-root.css-4pax7l-MuiPickersLayout-root {
+  display: flex;
+  color: var(--text);
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-width: 280px;
+  overflow: hidden;
+  padding: 0;
+  transition: none;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+button.MuiPickersDay-root.MuiPickersDay-today {
+  background-color: var(--accent) !important;
+  color: #000 !important;
+  border: 1px solid var(--accent) !important;
+}
+
+[data-theme="dark"] button.MuiPickersDay-root.MuiPickersDay-today {
+  color: #000 !important;
+}
+
+.MuiPickersLayout-root.css-4pax7l-MuiPickersLayout-root::-webkit-scrollbar {
+  background-color: transparent;
+  display: none;
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit.css-1vooibu-MuiSvgIcon-root,
+button.MuiButtonBase-root.MuiPickersDay-root.MuiPickersDay-dayWithMargin.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root,
+span.MuiTypography-root.MuiTypography-caption.MuiDayCalendar-weekDayLabel.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel,
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiPickersCalendarHeader-switchViewIcon.css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon {
+  color: var(--text);
+}
+
+.MuiDateCalendar-root.css-1q04gal-MuiDateCalendar-root {
+  overflow: hidden;
+  margin: 0 auto !important;
+}
+
+.MuiDateCalendar-root.css-1q04gal-MuiDateCalendar-root::-webkit-scrollbar {
+  display: none;
+}
+
+.MuiDayCalendar-header,
+.MuiDayCalendar-weekContainer,
+.MuiPickersCalendarHeader-root {
+  justify-content: center;
+}
+
+.css-1hbyad5-MuiTypography-root {
+  display: none !important;
+}
+
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  background-color: var(--accent) !important;
+}
+
+.css-195y93z-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+.css-195y93z-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  border-color: transparent !important;
+  color: var(--accent);
+}
+
+.css-144dnr3-MuiBadge-badge {
+  color: var(--accent);
+}
+
+.css-1n2mv2k {
+  background-color: #f4f4f4;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .MuiPickersLayout-root.css-4pax7l-MuiPickersLayout-root {
+    min-width: auto;
+  }
+
+  .MuiDateCalendar-root.css-1q04gal-MuiDateCalendar-root {
+    max-height: 350px;
+  }
+
+  .MuiPickersDay-root {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 13px !important;
+  }
+
+  .MuiDayCalendar-weekDayLabel {
+    font-size: 11px !important;
+  }
+
+  .MuiPickersCalendarHeader-root {
+    padding: 8px !important;
+  }
+
+  .MuiPickersCalendarHeader-switchViewButton {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .MuiPickersDay-root {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 12px !important;
+  }
+
+  .MuiDayCalendar-weekDayLabel {
+    font-size: 10px !important;
+  }
+
+  .MuiDateCalendar-root.css-1q04gal-MuiDateCalendar-root {
+    max-height: 300px;
+  }
+
+  .mini-calendar-wrapper {
+    padding: 8px;
+  }
+}

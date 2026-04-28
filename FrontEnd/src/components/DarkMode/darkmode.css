@@ -1,0 +1,44 @@
+/* ===== MODERN DARK MODE TOGGLE ===== */
+.modern-darkmode {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-pill {
+  width: 52px;
+  height: 28px;
+  background-color: #E2E8F0;
+  border-radius: 30px;
+  position: relative;
+  transition: background-color 0.4s ease;
+  border: 1px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+}
+
+.mode-pill.dark-active {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+.mode-slider {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.mode-pill.dark-active .mode-slider {
+  transform: translateX(22px);
+  background-color: #94A3B8;
+}

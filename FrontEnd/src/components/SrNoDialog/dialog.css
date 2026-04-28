@@ -1,0 +1,123 @@
+/* ===== DELETE DIALOG — Centered with Blur ===== */
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dialog-modal {
+  background: var(--prof);
+  border-radius: 16px;
+  padding: 32px;
+  width: 380px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.25s ease;
+}
+
+[data-theme="dark"] .dialog-modal {
+  background: var(--grey);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.dialog-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #FEE2E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+[data-theme="dark"] .dialog-icon {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.dialog-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.dialog-text {
+  font-size: 14px;
+  color: #64748B;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .dialog-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.dialog-btn-cancel {
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #E2E8F0;
+  background: transparent;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.dialog-btn-cancel:hover {
+  background: #F1F5F9;
+}
+
+[data-theme="dark"] .dialog-btn-cancel {
+  border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .dialog-btn-cancel:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.dialog-btn-delete {
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: #EF4444;
+  color: white;
+  transition: all 0.2s;
+}
+
+.dialog-btn-delete:hover {
+  background: #DC2626;
+}

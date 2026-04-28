@@ -1,0 +1,20 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+
+# Friendly routes to index
+Allow: /
+Allow: /login
+Allow: /signup
+
+# Private routes to block from search engines
+Disallow: /Home
+Disallow: /Dashboard
+Disallow: /task
+Disallow: /note
+Disallow: /todo
+Disallow: /profile
+Disallow: /ResetPass
+Disallow: /ForgotPass
+
+# Sitemaps (Optional - for future use)
+# Sitemap: http://localhost:3000/sitemap.xml
