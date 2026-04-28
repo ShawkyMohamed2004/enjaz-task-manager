@@ -6,8 +6,8 @@ const authModel = require("./Models/Model");
 const bcrypt = require("bcrypt");
 
 const googleCredentials = {
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  clientID: process.env.GOOGLE_CLIENT_ID || "dummy_client_id_to_prevent_crash",
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET || "dummy_client_secret_to_prevent_crash",
   callbackURL: process.env.GOOGLE_CALLBACK_URL || "http://localhost:8080/google/callback",
 };
 
