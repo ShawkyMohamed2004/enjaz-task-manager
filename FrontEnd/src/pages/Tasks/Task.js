@@ -24,7 +24,11 @@ const ModernSelect = ({ value, onChange, options, placeholder }) => {
 
   useEffect(() => {
     const clickOutside = (e) => {
-      if (containerRef.current && !containerRef.current.contains(e.target)) {
+      if (
+        containerRef.current && 
+        !containerRef.current.contains(e.target) &&
+        !e.target.closest('.modern-select-dropdown')
+      ) {
         setIsOpen(false);
       }
     };
