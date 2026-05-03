@@ -36,7 +36,7 @@ const Dashboard = ({ notes, setNotes, tasks, setTasks, todo, setTodo }) => {
         </div>
 
         {/* Bottom Left: Quick To-Do */}
-        <div className="dashboard-card todos">
+        <div className="dashboard-card todos" data-aos="fade-up-right">
           <div className="con-head">
             <p>My tasks ({String(todo.length).padStart(2, '0')})</p>
             <button onClick={() => navigate("/Home/todos")} className="view-all">⋮</button>
@@ -45,7 +45,7 @@ const Dashboard = ({ notes, setNotes, tasks, setTasks, todo, setTodo }) => {
         </div>
 
         {/* Bottom Right: Task Overview */}
-        <div className="dashboard-card stats">
+        <div className="dashboard-card stats" data-aos="fade-up-left">
           <div className="con-head">
             <p>Task Overview Table</p>
             <button onClick={() => navigate("/Home/task")} className="view-all">...</button>
