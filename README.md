@@ -401,7 +401,6 @@ npm start # Command used in both FrontEnd and BackEnd spaces.
 | **GET** | `/apple` | Social | Future placeholder |
 | **GET** | `/apple/callback` | Social | Future placeholder |
 
-> 📬 For Postman testing, import [Enjaz_Postman_Collection.json](Enjaz_Postman_Collection.json)  
 > 📘 For full project documentation, see [PROJECT_BOOK.md](Project_Guide/PROJECT_BOOK.md)
 
 ---
